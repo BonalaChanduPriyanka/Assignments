@@ -8,12 +8,18 @@ import java.io.IOException;
 public class ProverbReader {
 
 	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
+
 		BufferedReader BR = new BufferedReader(new FileReader("TopProverbs.txt"));
-		String s= BR.readLine();
-		if(s!=null)
-		{
-			System.out.println(s);
+		try {
+		    String s;
+		    while ((s = BR.readLine()) != null) {
+				if(s!=null)
+				{
+					System.out.println(s);
+				}
+		    }
+		} finally {
+		    BR.close();
 		}
 
 	}
